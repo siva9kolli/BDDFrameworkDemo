@@ -5,4 +5,4 @@ Feature: Test V1
     Given I login to application
     Then I verify username "Username"
     And I logout
-    Then I verify home logo
+    Then I verify home logo and menu list
