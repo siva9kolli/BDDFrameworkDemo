@@ -1,5 +1,6 @@
 package steps;
 
+import Automation.BaseBDD;
 import Pages.LoginPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -9,26 +10,18 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.Browser;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
-public class LoginSteps {
+public class LoginSteps extends BaseBDD {
     public LoginPage loginPage;
-    public static WebDriver driver;
-
-    @Before
-    public void intilaizeDriver(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    }
-
-    @After
-    public void killSession(){
-        driver.quit();
-    }
 
     @Given("I'm on Launch screen")
     public void i_m_on_launch_screen() {

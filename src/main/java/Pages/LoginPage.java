@@ -28,6 +28,11 @@ public class LoginPage {
         userNameInputField.sendKeys(userName);
         passwordInputField.sendKeys(pwd);
         signInButton.click();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
